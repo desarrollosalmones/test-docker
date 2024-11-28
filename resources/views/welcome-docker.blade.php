@@ -9,5 +9,12 @@
 <body>
     <h1>Web con bootstrap desde docker</h1>
     <button type="button" class="btn btn-primary">Enviar</button>
+    <hr>
+    <p>Cantidad de usuarios existentes en la BD: {{ count($usuarios) }}</p>
+    <ul>
+        @foreach($usuarios as $usuario)
+            <li>{{ $usuario->name }} - {{ $usuario->email }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>

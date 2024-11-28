@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/docker', function () {
-    return view('welcome-docker');
+    $usuarios = User::all();
+    return view('welcome-docker')->with(compact('usuarios'));
 });
